@@ -27,7 +27,8 @@ describe 'testing the demoqa registration page' do
     end
 
     it 'should accept a marital status selection of Single, Married, or Divorced' do
-
+      @driver.select_marital_option('single')
+      expect(@driver.check_if_selected_marital_option_is_made).to eq('single').or(eq('married')).or(eq('divorced'))
 
     end
 

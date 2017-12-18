@@ -7,7 +7,7 @@ class SeleniumDemoReg
   # Page field
   FIRST_NAME_FIELD = 'name_3_firstname'
   LAST_NAME_FIELD =  'name_3_lastname'
-  MARITAL_STATUS =  ['married','single','divorced']
+  MARITAL_STATUS =  'radio_4[]'
   HOBBY_STATUS =  'checkbox_5[]'
   COUNTRY_DROP_DOWN_LIST =  # id
   DOB_MONTH_DROPDOWN_LIST =  # id
@@ -68,8 +68,24 @@ class SeleniumDemoReg
 
   def select_marital_option(marital_status)
     # Consider something like a case statement and check the selenium selected? method
-
+       @chrome_driver.find_elements(:name, MARITAL_STATUS).each do |option|
+        if option.attribute('value') == marital_status
+          option.click
+        end
+      end
   end
+
+  def check_if_selected_marital_option_is_made
+    @selected_marital = 0
+    @chrome_driver.find_elements(:name, MARITAL_STATUS).each do |option|
+      if option.selected? == true
+        @selected_marital =  option.attribute('value')
+      end
+    end
+    @selected_marital
+  end
+
+
 
   # hobby option management - Difficulty Medium
 
@@ -97,7 +113,7 @@ class SeleniumDemoReg
         @selected_hobby =  hob.attribute('value')
       end
     end
-     @selected_hobby
+    @selected_hobby
   end
 
 
@@ -191,9 +207,8 @@ end
 
 # x = SeleniumDemoReg.new
 # x.access_registration_form
-
-# x.select_hobby_option('dance')
+#
+# x.select_marital_option('divorced')
 # sleep 4
-# x.check_if_selected_hobby_is_made
-# sleep 4
-# puts x.genarate_random_hobby
+# x.check_if_selected_marital_option_is_made
+# sleep
