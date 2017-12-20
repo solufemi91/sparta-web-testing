@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe 'correct user details produces valid screen' do
 
+  after(:all)do
+      Capybara.current_session.driver.quit
+  end
+
   context 'it should respond with the correct screen when correct details are input' do
 
     it 'should produce the correct screen when inputting a correct password to a valid account' do
@@ -13,6 +17,8 @@ describe 'correct user details produces valid screen' do
       @bbc_site.bbc_sign_in_page.click_sign_in_button
       expect(@bbc_site.bbc_homepage.sign_in_link_text).to eq('Your account')
     end
+
+
 
 
 

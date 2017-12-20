@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe 'correct details to signup produces succesful signup' do
 
+  after(:all)do
+      Capybara.current_session.driver.quit
+  end
+
   context 'it should respond with the correct screen when correct sign up details are inputted' do
 
     it "it should produce a succesful sign up page when you enter all the necessary details" do
