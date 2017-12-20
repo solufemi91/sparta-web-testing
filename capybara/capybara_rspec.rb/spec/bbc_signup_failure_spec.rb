@@ -21,8 +21,9 @@ describe 'Incorrect details to signup produces valid error' do
       @bbc_site.bbc_register_page.input_year_form('2020')
 
       @bbc_site.bbc_register_page.click_continue_button
-      sleep 4
+
       expect(@bbc_site.bbc_register_page.incorrect_age_error_message).to eq @bbc_site.bbc_register_page.return_correct_message
+      sleep 8
     end
 
 

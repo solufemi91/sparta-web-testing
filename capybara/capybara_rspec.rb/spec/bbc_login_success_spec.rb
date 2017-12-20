@@ -16,6 +16,7 @@ describe 'correct user details produces valid screen' do
       @bbc_site.bbc_sign_in_page.fill_in_password('whsmith2')
       @bbc_site.bbc_sign_in_page.click_sign_in_button
       expect(@bbc_site.bbc_homepage.sign_in_link_text).to eq('Your account')
+      sleep 8
     end
 
 

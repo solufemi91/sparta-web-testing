@@ -26,12 +26,11 @@ describe 'correct details to signup produces succesful signup' do
       @bbc_site.bbc_register_page.fill_password_field('whsmith2')
       @bbc_site.bbc_register_page.fill_postcode_field('TW91AP')
       @bbc_site.bbc_register_page.choose_gender
-      sleep 8
-      @bbc_site.bbc_register_page.click_yes_please_button
-      sleep 4
+      # @bbc_site.bbc_register_page.click_yes_please_button
+      # sleep 4
       @bbc_site.bbc_register_page.click_register_button
-      sleep 4
-      # expect(@bbc_site.bbc_register_page.incorrect_age_error_message).to eq @bbc_site.bbc_register_page.return_correct_message
+      sleep 8
+      
     end
 
 
