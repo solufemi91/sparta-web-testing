@@ -8,6 +8,10 @@ I had to created many constants that had the value of HTML attributes and then u
 
 # How to run the programme
 
-Enter the Selinium-intro directory and run the following command: ruby selenium_class_intro.rb'
+Enter the celinium-intro directory and run the following command: ```ruby selenium_class_intro.rb```
+
+Also, just in case you dont have the necessary gem installed, run the following command:
+
+```gem install selenium-webdriver```
 
 Here is a cheatsheet for Selenium: https://gist.github.com/huangzhichong/3284966
